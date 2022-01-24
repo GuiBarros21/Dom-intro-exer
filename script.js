@@ -27,9 +27,7 @@ document.body.appendChild(link);
   Split each new sentence on to a separate line in the paragraph text.
   A sentence can be assumed to be a string of text terminated with a period (.)
 */
-paragraph.innerHTML = paragraph.innerText
-.split('.')
-.join('.</p><p>');
+paragraph.innerHTML = paragraph.innerHTML.split('.').join('.</p><p>' + '</p>');
 
 /* 
   Exercise 04
@@ -49,5 +47,5 @@ document.body.insertBefore(wordCountElement,paragraph);
 */
 Array.from(document.querySelectorAll('p'))
 .forEach(p=> {
-  p.innerHTML = p.innerHTML.replace(/?/g,'🤔').replace(/!/g,'😲');
+  p.innerHTML = p.innerHTML.replace(/\?/g,'🤔').replace(/\!/g,'😲');
 })
